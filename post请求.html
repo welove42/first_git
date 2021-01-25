@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <button id="btn_post">发起post请求</button>
+    <script>
+        $(function () {
+            $('#btn_post').on('click', function () {
+                $.post('http://www.liulongbin.top:3006/api/addbook', { bookname: 'mmp', author: 'rnm', publisher: 'gun' }, function (result) {
+                    console.log(result);
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

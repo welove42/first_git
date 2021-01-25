@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <button id="ajax_get">get</button>
+    <button id="ajax_post">post</button>
+    <script>
+        $(function () {
+            $('#ajax_get').on('click', function () {
+                $.ajax({
+                    type: 'get',
+                    url: 'http://www.liulongbin.top:3006/api/getbooks',
+                    data: {
+                        id: 1
+                    },
+                    success(res) {
+                        console.log(res);
+                    },
+                    error() {
+                        console.log('error');
+                    }
+                })
+            })
+            $('#ajax_post').on('click', function () {
+                $.ajax({
+                    type: 'post',
+                    url: 'http://www.liulongbin.top:3006/api/addbook',
+                    data: {
+                        bookname: 'test',
+                        author: 'test',
+                        publisher: 'test'
+                    },
+                    success(res) {
+                        console.log(res);
+                    },
+                    error() {
+                        console.log('error');
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
